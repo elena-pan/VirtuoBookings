@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="chatMessage"
+            type="com.virtuobookings.database.ChatMessage" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="12dp">
+
+        <TextView
+            android:id="@+id/textview_message_from"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/rounded_textbox_coloured"
+            android:maxWidth="240dp"
+            android:padding="16dp"
+            android:text="@{chatMessage.text}"
+            android:textColor="@android:color/black"
+
+            android:textSize="18sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="This is my message that will wrap into multiple lines and keep on going" />
+
+        <TextView
+            android:id="@+id/textview_message_from_timestamp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingStart="8dp"
+            android:text="@{chatMessage.formattedTimestamp}"
+            android:textColor="@color/tertiary_text_light"
+
+            android:textSize="12sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/textview_message_from"
+            app:layout_constraintTop_toBottomOf="@+id/textview_message_from"
+            tools:text="12/04/2020, 23:45" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

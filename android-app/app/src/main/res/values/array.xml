@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<resources>
+    <array name="user_type">
+        <item>@string/user_type_client</item>
+        <item>@string/user_type_service_provider</item>
+        <item>@string/user_type_staff</item>
+    </array>
+    <array name="user_type_with_admin">
+        <item>All</item>
+        <item>@string/user_type_client</item>
+        <item>@string/user_type_service_provider</item>
+        <item>@string/user_type_staff</item>
+        <item>@string/title_admin</item>
+    </array>
+</resources>

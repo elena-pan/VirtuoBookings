@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable
+            name="chatMessage"
+            type="com.virtuobookings.database.ChatMessage" />
+        <variable
+            name="user"
+            type="com.virtuobookings.database.User" />
+    </data>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="4dp">
+
+        <TextView
+            android:id="@+id/displayname_textview_contacts"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{user.displayName}"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Name" />
+
+        <TextView
+            android:id="@+id/message_textview_contacts"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="@{chatMessage.text}"
+            android:textSize="16sp"
+            app:layout_constraintStart_toStartOf="@+id/displayname_textview_contacts"
+            app:layout_constraintTop_toBottomOf="@+id/displayname_textview_contacts"
+            tools:text="Latest Message" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="16dp"
+            android:background="@color/secondary_text_dark"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/message_textview_contacts" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

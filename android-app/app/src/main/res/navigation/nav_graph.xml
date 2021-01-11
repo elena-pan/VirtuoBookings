@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            xmlns:tools="http://schemas.android.com/tools"
+            android:id="@+id/nav_graph"
+            app:startDestination="@id/contactsFragment">
+
+    <fragment
+            android:id="@+id/contactsFragment"
+            android:name="com.virtuobookings.ui.ContactsFragment"
+            android:label="@string/app_name">
+        <action
+            android:id="@+id/action_contactsFragment_to_chatFragment"
+            app:destination="@id/chatFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:popExitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/action_contactsFragment_to_searchUsersFragment"
+            app:destination="@id/searchUsersFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:popExitAnim="@anim/slide_out_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/chatFragment"
+        android:name="com.virtuobookings.ui.ChatFragment"
+        android:label="{displayName}">
+        <argument
+            android:name="user"
+            app:argType="com.virtuobookings.database.User" />
+        <argument
+            android:name="displayName"
+            app:argType= "string"/>
+    </fragment>
+    <fragment
+        android:id="@+id/searchUsersFragment"
+        android:name="com.virtuobookings.ui.SearchUsersFragment"
+        android:label="New Chat">
+        <action
+            android:id="@+id/action_searchUsersFragment_to_chatFragment"
+            app:destination="@id/chatFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:popExitAnim="@anim/slide_out_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/bookAppointmentFragment"
+        android:name="com.virtuobookings.ui.BookAppointmentFragment"
+        android:label="@string/book_appointment_text">
+        <argument
+            android:name="user"
+            app:argType="com.virtuobookings.database.User" />
+    </fragment>
+    <fragment
+            android:id="@+id/settingsFragment"
+            android:name="com.virtuobookings.ui.SettingsFragment"
+            android:label="@string/app_name">
+    </fragment>
+    <fragment
+        android:id="@+id/appointmentsFragment"
+        android:name="com.virtuobookings.ui.AppointmentsFragment"
+        android:label="@string/title_appointments" >
+        <action
+            android:id="@+id/action_appointmentsFragment2_to_bookAppointmentFragment"
+            app:destination="@id/bookAppointmentFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:popExitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/action_appointmentsFragment_to_chatFragment"
+            app:destination="@id/chatFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:popExitAnim="@anim/slide_out_right" />
+    </fragment>
+
+</navigation>
